@@ -6,6 +6,8 @@ require('dotenv').config()
 const dataSchema = require('./schema/data')
 const app = express()
 
+const baseURI = "https://whales.mypinata.cloud/ipfs/QmPAyV5h1zEdEQX5LBAWUQS6oP85Qd2pvzoiFjzLyksN7n/"
+
 app.use(express.json())
 app.use(cors())
 
@@ -23,6 +25,6 @@ try {
     console.log(err)
 }
 
+fetch()
 
-
-app.listen(10001,()=>console.log("Listening 10001"))
+app.listen(process.env.PORT ||10001,()=>console.log("Listening 10001"))
